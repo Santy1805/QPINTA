@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href = "estilos.css">
+  <title>Qpinta Menu</title>
+  
+</head>
+<body>
+
+<h2 class="sr-only">Menú interactivo Qpinta — elegí tu producto, personalizalo y enviá el pedido por WhatsApp</h2>
+
+<div class="app">
+  <div class="header">
+    <div class="logo">
+  <div class="logo-img-container">
+    <img src="image/logoso.png" alt="Logo Qpinta" class="logo-img">
+  </div>
+  <span class="logo-text">Qpinta</span>
+</div>
+    <button class="cart-btn" onclick="openCart()">
+      Carrito <span id="cart-count">0</span>
+    </button>
+  </div>
+
+  <div class="cats" id="cats-bar">
+    <button class="cat-btn active" onclick="filterCat('Todos',this)">Todos</button>
+    <button class="cat-btn" onclick="filterCat('Hamburguesas',this)">🍔 Hamburguesas</button>
+    <button class="cat-btn" onclick="filterCat('Sandwiches',this)">🥖 Sandwiches</button>
+    <button class="cat-btn" onclick="filterCat('Pizzas',this)">🍕 Pizzas</button>
+    <button class="cat-btn" onclick="filterCat('Empanadas',this)">🥟 Empanadas</button>
+     <button class="cat-btn" onclick="filterCat('extras',this)">Extras</button>
+  </div>
+
+  <p class="section-title" id="section-lbl">Menú Especial "Qpinta"</p>
+  <div class="menu-grid" id="menu-grid"></div>
+</div>
+
+<div class="overlay" id="prod-overlay" onclick="closeProd(event)">
+  <div class="modal" id="prod-modal">
+    <div class="modal-header">
+      <span class="modal-title" id="mod-title">Personalizar</span>
+      <button class="close-btn" onclick="closeProdForce()">×</button>
+    </div>
+    <div id="mod-body"></div>
+    <div class="modal-footer">
+      <div class="subtotal">Total: <strong id="mod-total">$0.00</strong></div>
+      <button class="confirm-btn" onclick="addToCart()">Agregar al pedido</button>
+    </div>
+  </div>
+</div>
+
+<div class="cart-overlay" id="cart-overlay" onclick="closeCartEv(event)">
+  <div class="cart-modal">
+    <div class="modal-header">
+      <span class="modal-title">Tu Pedido</span>
+      <button class="close-btn" onclick="closeCart()">×</button>
+    </div>
+    <div id="cart-body"></div>
+  </div>
+</div>
+
+<script src="funciones.js"></script>
+</body>
+</html>
